@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
       d3.csv("/referendum.csv")
         .then(yesVotes => {
 
-            const width = 800;
-            const height = 800;
+            const width = 1200;
+            const height = 1200;
 
             const container = d3.select("#viz");
 
@@ -38,6 +38,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     return colorScale(voteMetaData.ja_anteil)
                 })
+                .on('mouseenter', function (d) {
+                    tooltip
+                        .style('opacity', 1)
+                        .html(d.properties.name)
+                })
+                .on('mousemove', function (d) {
+                    tooltip
+                        .style('left', d3.event.pageX + 'px')
+                        .style('top', d3.event.pageY + 'px')
+                })
+                .on('mouseleave', function () {
+                    tooltip
+                        .style('opacity', 0)
+                })
+
+
+            const tooltip = container.append('div')
+                .style('opacity' , 0)
+                .style('position' , 'absolute')
+                .style('background' , 'rgba(255, 255, 255, 0.8)')
+                .style('padding' , '0.5rem')
+                .style('pointer-events' , 'none');
+
             })
 
         })
