@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const colorScale = d3.scaleThreshold()
                 .domain([30,35,40,45,50,55,60,65,70,100])
-                .range(["#d0001b", "#e0513c", "#ee7e5f", "#f7a684", "#fdceaa", "#d0e0af", "#a6c185", "#7da35b", "#538633", "#256900"])
+                .range(["#660066", "#883988", "#aa71aa", "#ccaAcc", "#dfd3df", "#d9e2d3", "#b8d4aa", "#89b771", "#599a39", "#2a7d00"])
 
             const switzerland = svg.selectAll("path")
                 .data(cantons.features)
