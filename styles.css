@@ -12,12 +12,21 @@ body {
 }
 
 h1 {
-    width: 40vw;
+    width: 60vw;
     margin-left: 3rem;
     font-family: 'Poppins', sans-serif;
     font-size: 3.5rem;
     line-height: 4.5rem;
     z-index: 100;
+    margin-top: -1rem;
+}
+
+p{
+    width: 40vw;
+    margin-left: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+
 }
 
 #viz {
@@ -31,4 +40,8 @@ h1 {
 
 #svg{
     margin: 0 auto;
+}
+
+ul{
+    margin-top: 3rem;
 }
