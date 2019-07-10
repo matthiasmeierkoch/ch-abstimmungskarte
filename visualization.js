@@ -48,9 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             return colorScale(voteMetaData.ja_anteil)
                         })
                         .on('mouseenter', function (d) {
+                            const voteMetaData = yesVotes.find(yesVote => yesVote.id == d.properties.id);
                             tooltip
                                 .style('opacity', 1)
-                                .html(d.properties.name)
+                                .html("<b>" + d.properties.name + ": " + "</b>" + voteMetaData.ja_anteil + "%")
 
                         })
                         .on('mousemove', function (d) {
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 .style('opacity', 0)
                         });
 
-                    svg.append("text").attr("x", 810).attr("y", 130).text("% Ja-Stimmen").style("font-size", "15px",).attr("alignment-baseline", "middle");
+                    svg.append("text").attr("x", 810).attr("y", 130).text("Ja-Stimmen:").style("font-size", "15px",).style("font-weight", 600).attr("alignment-baseline", "left");
 
                     svg.append("circle").attr("cx", 810).attr("cy", 170).attr("r", 6).style("fill", "#660066");
                     svg.append("text").attr("x", 830).attr("y", 170).text("0% - 30%").style("font-size", "15px").attr("alignment-baseline", "middle");
