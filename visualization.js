@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             const voteMetaData = yesVotes.find(yesVote => yesVote.id == d.properties.id);
                             tooltip
                                 .style('opacity', 1)
-                                .html("<b>" + d.properties.name + ": " + "</b>" + voteMetaData.ja_anteil + "%")
+                                .html("<b>" + d.properties.name + ": " + "</br>" + "</b>" + voteMetaData.ja_anteil + "% Ja")
 
                         })
                         .on('mousemove', function (d) {
